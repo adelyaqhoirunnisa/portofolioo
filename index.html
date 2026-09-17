@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My Purple Portfolio 🦋</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Pacifico&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --purple: #9b7ede;
+      --purple-dark: #7555a8;
+      --purple-light: #dcd0fa;
+      --pink: #f4d9ef;
+      --lavender: #eee7ff;
+      --white: #fffaff;
+      --text: #57466f;
+      --muted: #8d7da2;
+    }
+
+    body {
+      font-family: "Quicksand", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 10% 20%, #eadfff 0 8%, transparent 25%),
+        radial-gradient(circle at 90% 10%, #f9ddf2 0 7%, transparent 22%),
+        linear-gradient(135deg, #faf7ff, #f3edff, #fff7fc);
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       DECORATIONS
+    ========================= */
+
+    .sparkle {
+      position: absolute;
+      color: #b39be8;
+      font-size: 20px;
+      animation: sparkle 2s infinite ease-in-out;
+      pointer-events: none;
+    }
+
+    .s1 {
+      top: 18%;
+      left: 8%;
+    }
+
+    .s2 {
+      top: 30%;
+      right: 10%;
+      animation-delay: .7s;
+    }
+
+    .s3 {
+      top: 70%;
+      left: 5%;
+      animation-delay: 1.2s;
+    }
+
+    .s4 {
+      bottom: 10%;
+      right: 8%;
+      animation-delay: .4s;
+    }
+
+    @keyframes sparkle {
+      0%, 100% {
+        opacity: .3;
+        transform: scale(.8) rotate(0deg);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.3) rotate(15deg);
+      }
+    }
+
+    /* Butterfly */
+
+    .butterfly {
+      position: absolute;
+      font-size: 42px;
+      z-index: 2;
+      animation: fly 7s infinite ease-in-out;
+      filter: drop-shadow(0 8px 12px rgba(117, 85, 168, .2));
+    }
+
+    .b1 {
+      top: 18%;
+      right: 7%;
+    }
+
+    .b2 {
+      top: 55%;
+      left: 4%;
+      font-size: 30px;
+      animation-delay: 2s;
+    }
+
+    .b3 {
+      bottom: 8%;
+      right: 15%;
+      font-size: 25px;
+      animation-delay: 4s;
+    }
+
+    @keyframes fly {
+      0%, 100% {
+        transform: translate(0, 0) rotate(-5deg);
+      }
+
+      25% {
+        transform: translate(-15px, -25px) rotate(8deg);
+      }
+
+      50% {
+        transform: translate(15px, -10px) rotate(-8deg);
+      }
+
+      75% {
+        transform: translate(-5px, 15px) rotate(5deg);
+      }
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 100;
+      padding: 15px 7%;
+    }
+
+    .navbar {
+      max-width: 1100px;
+      margin: auto;
+      padding: 13px 22px;
+      border: 1px solid rgba(155, 126, 222, .18);
+      border-radius: 50px;
+      background: rgba(255, 250, 255, .75);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 8px 30px rgba(117, 85, 168, .08);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: "Pacifico", cursive;
+      font-size: 23px;
+      color: var(--purple-dark);
+    }
+
+    .logo span {
+      color: #c995d8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      font-weight: 600;
+      font-size: 14px;
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+      max-width: 1100px;
+      margin: auto;
+      padding: 140px 30px 80px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 650px;
+      z-index: 3;
+    }
+
+    .hello {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 30px;
+      background: #eee6ff;
+      color: var(--purple-dark);
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 76px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #614c78;
+    }
+
+    .hero h1 span {
+      font-family: "Pacifico", cursive;
+      font-weight: 400;
+      background: linear-gradient(
+        90deg,
+        #8666c7,
+        #bd83bb
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.8;
+      max-width: 560px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      color: white;
+      background: linear-gradient(
+        135deg,
+        #9b7ede,
+        #b887d0
+      );
+      box-shadow: 0 10px 25px rgba(139, 104, 193, .2);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 30px rgba(139, 104, 193, .3);
+    }
+
+    .btn-outline {
+      color: var(--purple-dark);
+      border: 1px solid #d8c9f5;
+      background: rgba(255,255,255,.5);
+    }
+
+    .btn-outline:hover {
+      background: #eee6ff;
+      transform: translateY(-4px);
+    }
+
+    /* Profile */
+
+    .profile-wrapper {
+      position: relative;
+      flex-shrink: 0;
+    }
+
+    .profile {
+      width: 310px;
+      height: 310px;
+
+      border-radius: 48% 52% 50% 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #d8c5ff,
+          #f5dff3
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      box-shadow:
+        0 25px 60px rgba(120, 87, 174, .18);
+
+      animation: float 4s infinite ease-in-out;
+    }
+
+    .profile-inner {
+      width: 270px;
+      height: 270px;
+
+      border-radius: 50%;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          #fffaff,
+          #eee4ff
+        );
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 90px;
+
+      border: 8px solid rgba(255,255,255,.7);
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-12px);
+      }
+    }
+
+    .mini-heart {
+      position: absolute;
+      bottom: 5px;
+      left: -10px;
+      background: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 10px 30px rgba(100,70,140,.12);
+      font-size: 25px;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
+
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 90px 30px;
+      position: relative;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title small {
+      color: var(--purple);
+      font-weight: 700;
+    }
+
+    .section-title h2 {
+      font-family: "Pacifico", cursive;
+      font-size: 38px;
+      font-weight: 400;
+      color: #6c5682;
+      margin: 7px 0;
+    }
+
+    .section-title p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 35px;
+    }
+
+    .about-card,
+    .info-card,
+    .skill,
+    .project,
+    .contact-box {
+      background: rgba(255, 255, 255, .65);
+      border: 1px solid rgba(155,126,222,.16);
+      box-shadow: 0 15px 40px rgba(117,85,168,.07);
+      backdrop-filter: blur(10px);
+    }
+
+    .about-card {
+      padding: 35px;
+      border-radius: 25px;
+    }
+
+    .about-card h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .about-card p {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .info {
+      display: grid;
+      gap: 15px;
+    }
+
+    .info-card {
+      padding: 20px;
+      border-radius: 18px;
+    }
+
+    .info-card strong {
+      display: block;
+      color: var(--purple-dark);
+      margin-bottom: 4px;
+    }
+
+    .info-card span {
+      color: var(--muted);
+    }
+
+    /* =========================
+       SKILLS
+    ========================= */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      padding: 28px 15px;
+      text-align: center;
+      border-radius: 22px;
+      transition: .3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-8px) rotate(1deg);
+      background: #fffaff;
+      border-color: #d4c2f6;
+    }
+
+    .skill-icon {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .skill h3 {
+      font-size: 17px;
+    }
+
+    .skill p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    /* =========================
+       PROJECTS
+    ========================= */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project {
+      border-radius: 23px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+    }
+
+    .project-image {
+      height: 180px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 65px;
+
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          #fff,
+          transparent 20%
+        ),
+        linear-gradient(
+          135deg,
+          #d9c7ff,
+          #f4d9ee
+        );
+    }
+
+    .project-content {
+      padding: 22px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #eee7ff;
+      color: #795daf;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-box {
+      max-width: 700px;
+      margin: auto;
+      padding: 35px;
+      border-radius: 25px;
+    }
+
+    .form-group {
+      margin-bottom: 17px;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #dfd2f2;
+      background: rgba(255,255,255,.7);
+      padding: 13px 15px;
+      border-radius: 13px;
+      color: var(--text);
+      font-family: inherit;
+      outline: none;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 3px rgba(155,126,222,.1);
+    }
+
+    textarea {
+      min-height: 130px;
+      resize: vertical;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: var(--muted);
+      border-top: 1px solid rgba(155,126,222,.12);
+    }
+
+    footer span {
+      color: var(--purple-dark);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .navbar {
+        justify-content: center;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 130px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .profile {
+        width: 240px;
+        height: 240px;
+      }
+
+      .profile-inner {
+        width: 210px;
+        height: 210px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .b1 {
+        right: 2%;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      .hero h1 {
+        font-size: 47px;
+      }
+
+      .skills {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 70px 20px;
+      }
+
+      .about-card,
+      .contact-box {
+        padding: 25px;
+      }
+
+      .butterfly {
+        font-size: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- DECORATIONS -->
+
+  <div class="sparkle s1">✦</div>
+  <div class="sparkle s2">✧</div>
+  <div class="sparkle s3">✦</div>
+  <div class="sparkle s4">✧</div>
+
+  <div class="butterfly b1">🦋</div>
+  <div class="butterfly b2">🦋</div>
+  <div class="butterfly b3">🦋</div>
+
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="navbar">
+
+      <div class="logo">
+        My<span>Portfolio</span> 🦋
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <div class="hello">
+        ✨ Welcome to my little world
+      </div>
+
+      <h1>
+        Hi, I'm<br>
+        <span>Adelya Qhoirunnisa</span> 🦋
+      </h1>
+
+      <p>
+        Hi, I'm Adelya Qhoirunnisa.
+
+Student of TJKT & Writer.
+
+Saya adalah pelajar jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT) yang memiliki ketertarikan pada dunia teknologi, jaringan komputer, dan dunia kepenulisan.
+
+Saya senang mempelajari hal-hal baru, mengembangkan kemampuan di bidang teknologi, sekaligus menuangkan ide dan kreativitas melalui tulisan (penulis).
+
+      <div class="buttons">
+
+        <a href="#projects" class="btn btn-primary">
+          ✨ My Projects
+        </a>
+
+        <a href="#contact" class="btn btn-outline">
+          💌 Contact Me
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="profile-wrapper">
+
+      <div class="profile">
+        <div class="profile-inner">
+          👩🏻‍💻
+        </div>
+      </div>
+
+      <div class="mini-heart">
+        💜
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="section-title">
+      <small>♡ A little about me ♡</small>
+      <h2>About Me</h2>
+      <p>Let's get to know each other ✨</p>
+    </div>
+
+    <div class="about">
+
+      <div class="about-card">
+
+        <h3>Hi there! 🌷</h3>
+
+        <p>
+          Halo, saya Adelya Qhoirunnisa! 🌷.
+Saya merupakan pelajar dari jurusan Teknik Jaringan Komputer dan Telekomunikasi (TJKT) yang tertarik dengan perkembangan teknologi dan dunia digital.
+
+Selama belajar di TJKT, saya mempelajari berbagai dasar mengenai jaringan komputer, perangkat jaringan, konfigurasi jaringan, serta teknologi komputer dan telekomunikasi.
+
+Selain bidang teknologi, saya juga memiliki minat dalam menulis. Bagi saya, menulis adalah salah satu cara untuk menyampaikan ide, cerita, informasi, dan perasaan melalui kata-kata.
+
+Saya percaya bahwa kemampuan teknologi dan kemampuan berkomunikasi dapat menjadi kombinasi yang baik untuk terus berkembang di era digital. 💜
+
+        </p>
+
+      </div>
+
+
+      <div class="info">
+
+        <div class="info-card">
+          <strong>📍 Location</strong>
+          <span>Indonesia 🇮🇩</span>
+        </div>
+
+        <div class="info-card">
+          <strong>💻 Profession</strong>
+          <span>Fresh Graduate</span>
+        </div>
+
+        <div class="info-card">
+          <strong>💌 Email, Instagram, Github Account</strong>
+          <span>EMAIL     : adelyaqhoirunnisa@gmail.com</span>
+          <span>INSTAGRAM : @prettiest.ly</span>
+          <span>GITHUB : @adelyaqhoirunnisa</span>
+        </div>
+
+        <div class="info-card">
+          <strong>🌷 Status</strong>
+          <span>Students</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="section-title">
+
+      <small>♡ Things I can do ♡</small>
+
+      <h2>My Skills</h2>
+
+      <p>Kemampuan saya dapat memahami tentang Teknik Jaringan Komputer dan Telekomunikasi (TJKT). Selain itu saya juga dapat
+        menulis sesuatu dan menciptakan kreatifitas baru.</p>
+
+    </div>
+
+
+    <div class="skills">
+
+      <div class="skill">
+        <div class="skill-icon">🌸</div>
+        <h3>Kemampuan Teknologi</h3>
+        <p>Jaringan Komputer.
+            Memahami dasar jaringan komputer, topologi jaringan, IP address, serta konsep komunikasi antarperangkat.</p>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🎀</div>
+        <h3>Kemampuan Teknologi</h3>
+        <p>Konfigurasi Jaringan.
+            Mempelajari konfigurasi dasar perangkat dan jaringan serta memahami proses agar perangkat dapat saling terhubung.</p>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">✨</div>
+        <h3>Kemampuan Menulis</h3>
+        <p>Creative Writing.
+            Mampu menuangkan ide dan imajinasi menjadi tulisan yang menarik dan mudah dinikmati. Memiliki ketertarikan dalam membuat
+cerita dengan mengembangkan karakter, alur, dan suasana.</p>
+      </div>
+
+      <div class="skill">
+        <div class="skill-icon">🪻</div>
+        <h3>Kemampuan Menulis</h3>
+        <p>Copywriting.
+            Mampu membuat kalimat singkat yang menarik untuk kebutuhan promosi, media sosial, maupun konten digital.
+        Membuat tulisan informatif mengenai berbagai topik dengan bahasa yang mudah dipahami.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="section-title">
+
+      <small>♡ My little creations ♡</small>
+
+      <h2>My Projects</h2>
+
+      <p>Some things I've created with love 💜</p>
+
+    </div>
+
+
+    <div class="projects">
+
+      <div class="project">
+
+        <div class="project-image">
+          🌐
+        </div>
+
+        <div class="project-content">
+
+          <h3>💻Computer Installation</h3>
+
+          <p> Project praktik yang berkaitan dengan instalasi sistem operasi, software, serta pengenalan dan perawatan perangkat komputer.
+
+Skills:
+Hardware • Software • Installation
+          </p>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JS</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="project">
+
+        <div class="project-image">
+          📚
+        </div>
+
+        <div class="project-content">
+
+          <h3>✍️ Personal Writing</h3>
+
+          <p>
+            Kumpulan tulisan pribadi yang saya buat untuk mengembangkan kemampuan menulis dan menuangkan ide melalui kata-kata.
+
+Tulisan dapat berupa cerita pendek, artikel, opini, maupun tulisan kreatif lainnya.
+
+Skills:
+Writing • Storytelling • Creativity
+          </p>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">UI</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="project">
+
+        <div class="project-image">
+          ✨
+        </div>
+
+        <div class="project-content">
+
+          <h3>🦋 Mini Project</h3>
+
+          <p>
+            Menciptakan atau membuat web, mendesain topologi. serta melakukan pengujian konektivitas.
+Skills:
+Hardware • Software • Installation
+          </p>
+
+          <div class="tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">UI</span>
+          </div>
+
+        </div>
+
+      </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="section-title">
+
+      <small>♡ Let's be friends ♡</small>
+
+      <h2>Contact Me</h2>
+
+      <p>
+        Have a project in mind? Let's create something cute! 🦋
+      </p>
+
+    </div>
+
+
+    <div class="contact-box">
+
+      <form id="contactForm">
+
+        <div class="form-group">
+
+          <label for="name">
+            Your Name 🌷
+          </label>
+
+          <input
+            id="name"
+            type="text"
+            placeholder="Nama kamu..."
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="email">
+            Your Email 💌
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            placeholder="email@example.com"
+            required
+          >
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label for="message">
+            Your Message 🦋
+          </label>
+
+          <textarea
+            id="message"
+            placeholder="Tulis pesan kamu..."
+            required
+          ></textarea>
+
+        </div>
+
+
+        <button
+          type="submit"
+          class="btn btn-primary"
+          style="border:0; cursor:pointer;"
+        >
+          Send with Love 💜
+        </button>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    Made with 💜 & 🦋 by
+    <span>Nama Kamu</span>
+
+    <br>
+
+    © <span id="year"></span> All rights reserved.
+
+  </footer>
+
+
+  <script>
+
+    // Tahun otomatis
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+
+    // Form
+
+    document
+      .getElementById("contactForm")
+      .addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const name =
+          document.getElementById("name").value;
+
+        alert(
+          `Thank you, ${name}! 💜🦋\n\nYour message has been received ✨`
+        );
+
+        this.reset();
+
+      });
+
+  </script>
+
+</body>
+</html>
